@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>精弘首页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <div id="body" ref="pronbit">
+      <div class="start" id="start">
+        <div class="start-content">
+          <div class="content1">精弘网络,取精用弘</div>
+          <div class="content2">
+            <div>向下滑动</div>
+            <div class="start-img"></div>
+            <div>探索精弘</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="introduce">
+        <img class="introduce-img2" src="../photo/index/taiquandao.png" />
+        <div class="introduce-content">
+          <div class="title">
+            <span>精弘网络⼁Jinghong Union</span>
+          </div>
+          <div class="content">
+            成立于2002年5月，<br />
+            精弘的名字取自工大学风“取精用弘”，<br />
+            是浙江工业大学的学术网络组织。<br />
+            精弘网络秉承着自由、共享、团结、创新的精神，<br />
+            全心全意为在校师生提供优质的服务<br />
+            和交流平台，收到了广泛好评。<br />
+          </div>
+        </div>
+        <img class="introduce-img1" src="../photo/index/muqiu.png" />
+      </div>
+
+      <div class="history">
+        <div class="title-style"><h1>精弘大事记</h1></div>
+        <div class="qufudong">
+          <div class="history-left">
+            <div
+              class="history-img"
+              v-bind:style="{'background-image': 'url(' + sites[now].img + ')'}"
+            ></div>
+            <div class="history-img-name">{{sites[now].name}}</div>
+          </div>
+          <div class="history-right">
+            <div class="time">{{sites[now].content[0]}}</div>
+            <div class="event">{{sites[now].content[1]}}</div>
+            <div class="history-right-img"></div>
+          </div>
+        </div>
+        <div class="history-choice">
+          <div class="red-line"></div>
+          <div
+            class="choices"
+            v-for="(site,index) in sites"
+            v-on:click="now=index"
+          >
+            <div
+              :class="index == now ? 'big-ball': 'ball'"
+              v-bind:style="{'background-image': 'url(' + site.img + ')','border-color':(index % 2 == 1 ? '#D20001':'#fab3b3')}"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story">
+        <div class="img"></div>
+
+        <div class="content">
+          <a href="story.html">
+            <div class="story-title">
+              <div>我们的故事</div>
+              <div class="right-arrow"></div>
+            </div>
+          </a>
+          <div class="story-content">
+            因梦想，我们齐聚一堂；因使命，我们同舟共济。
+          </div>
+        </div>
+      </div>
+
+      <div class="end">
+        <div class="end-1">
+          <a><div class="follow-img1"></div></a>
+          <div class="">
+            <div class="title-font1">联系我们 | 关注我们</div>
+            <div class="title-font2">jhwl@zjut.edu.cn</div>
+          </div>
+          <a href="https://github.com/zjutjh" target="_blank"
+            ><div class="follow-img2"></div
+          ></a>
+        </div>
+
+        <div class="end-iron" id="end-iron"></div>
+
+        <div class="end-recruit">
+          <div class="title-font">精弘招聘</div>
+          <a href="join.html"><div class="recruit-button">加入我们</div></a>
+        </div>
+
+        <div class="loading">
+          <div class="loading-text">
+            <img src="../photo/index/2021.png" />
+          </div>
+          <div class="loading-border">
+            <div
+              id="loading-img"
+              class="loading-img"
+              v-bind:style="{left: loading_width +'%'}"
+            ></div>
+          </div>
+          <div class="loading-text">
+            <img src="../photo/index/loading.png" />
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">©2021 浙江工业大学-精弘网络</div>
+
+      <div
+        v-bind:class="top"
+        :style="{'background': scrollHeigh < 1 ? 'transparent':'#D20001','box-shadow': scrollHeigh < 1 ? '':'0 5px 10px #999999'}"
+      >
+        <img src="../photo/top/logo.png" />
+        <nav>
+          <div class="nav-list">
+            <div
+              v-for="page,index in pages"
+              :class="page_now === index?'page_selected':'page_unselected'"
+            >
+              <a :href="page.href" style="height: 100%">{{page.name}}</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>易班文化工作站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="mokuai.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="body" ref="pronbit">
+      <div class="mokuai-title">易班文化工作站</div>
+      <div class="yiban">
+        <div class="title">易班文化工作站</div>
+        <div class="neikuang">
+          <div class="img1">
+            <div
+              class="img11"
+              v-bind:style="{'background-image': 'url(../../photo/department/' + img + '.jpg)'}"
+              v-for="img in mokuai[5].img.slice(0,3)"
+            ></div>
+          </div>
+          <div v-for="content in mokuai[5].content.slice(0,3)">
+            <div class="content-title">{{content.title}}</div>
+            <div class="content-content">{{content.content}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fork" v-on:click="closeWindow"></div>
+      
+      <div class="footer">©2021 浙江工业大学-精弘网络</div>
+      
+      <div v-bind:class="top" style="background: #D20001">
+        <img src="../../photo/top/logo.png" />
+        <nav>
+          <div class="nav-list">
+            <div
+              v-for="page,index in pages"
+              
+              :class="page_now === index?'page_selected':'page_unselected'"
+            >
+              <a :href="page.href" style="height: 100%">{{page.name}}</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <script src="mokuai.js"></script>
+  </body>
+</html>
