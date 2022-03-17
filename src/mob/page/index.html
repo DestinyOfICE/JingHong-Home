@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>精弘首页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="body" ref="pronbit">
+      <div class="content" id="content">
+        <div class="start">
+          <div class="start-title">
+            <div>精弘网络</div>
+            <div>取精用弘</div>
+          </div>
+          <div class="start-img" @click="scrollToTop"></div>
+          <div class="start-img-content">下滑探索精弘</div>
+        </div>
+      </div>
+
+      <div class="introduce" id="introduce">
+        <div class="title">精弘网络⼁Jinghong Union</div>
+        <div class="content">{{introduce_content}}</div>
+      </div>
+      <div class="title-style">精弘成长史</div>
+      <div class="history" ref="history">
+        <div class="history-line" ref="historyline">
+          <div
+            class="history-item"
+            v-for="item,index in items"
+            :style="{'--angle': index % 2 === 0?angle:angle2,'--scale':scale,'--border': index % 2 === 0?'dashed':'solid','--line_seen':index===9?'none':'block'}"
+          >
+            <div
+              class="img"
+              :class="[index % 2 === 0 ? 'history-img1' : 'history-img2', top111 < 487 - (index-2) * 80 - 60 ? 'history-img':'history-img-hide']"
+              :style="{'background-image':'url('+item.img+')'}"
+            >
+              <div class="history-content">
+                <div class="history-content1">{{item.time}}</div>
+                <div class="history-content2">{{item.content}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="history-line-mask" :style="{'--top':top_d}"></div>
+        </div>
+      </div>
+
+      <div class="story">
+        <div
+          class="img"
+          style="background-image: url(../photo/index/diannao.jpg)"
+        ></div>
+
+        <div class="content">
+          <a href="story.html">
+            <div class="story-title">
+              <div>我们的故事</div>
+              <div class="right-arrow"></div></div
+          ></a>
+
+          <div class="story-content">
+            因梦想，我们齐聚一堂；因使命，我们同舟共济。
+          </div>
+        </div>
+      </div>
+
+      <div class="end">
+        <div class="loading">
+          <div class="loading-text">
+            <img src="../photo/index/2021.png" />
+          </div>
+          <div class="loading-border">
+            <div
+              id="loading-img"
+              class="loading-img"
+              v-bind:style="{left: loading_width +'%'}"
+            ></div>
+          </div>
+          <div class="loading-text">
+            <img src="../photo/index/loading.png" />
+          </div>
+        </div>
+
+        <div class="end-iron" id="end-iron"></div>
+
+        <div class="end-recruit">
+          <div class="title-font">精弘招聘</div>
+          <a href="join.html" class="recruit-button">加入我们</a>
+        </div>
+
+        <div class="end-1">
+          <div class="follow-img1"></div>
+          <div class="">
+            <div class="title-font1">联系我们|关注我们</div>
+            <div class="title-font2">jhwl@zjut.edu.cn</div>
+          </div>
+          <a href="https://github.com/zjutjh">
+          <div class="follow-img2"></div></a>
+        </div>
+      </div>
+
+      <div class="footer">©2021 浙江工业大学-精弘网络</div>
+
+      <div id="nav">
+        <div
+          v-if="seen === false"
+          v-bind:class="top"
+          :style="{'background': scrollHeigh < 1 ? 'transparent':'#D20001','box-shadow': scrollHeigh < 1 ? '':'0 5px 10px #999999'}"
+        >
+          <div class="button-on" v-on:click="show" @touchmove.prevent></div>
+          <img class="img" src="../photo/top/logo.png" />
+        </div>
+
+        <div v-if="seen" v-bind:class="slideNav" @touchmove.prevent @mousewheel.prevent>
+          <div v-bind:class="top" :style="{'background':'#D20001'}">
+            <div class="button-off" v-on:click="hide"></div>
+            <img class="img" src="../photo/top/logo.png" />
+          </div>
+          <div class="nav-list">
+            <div>
+              <a href="index.html">首页</a>
+            </div>
+            <div>
+              <a href="story.html">我们的故事</a>
+            </div>
+            <div>
+              <a href="product.html">我们的产品</a>
+            </div>
+            <div>
+              <a href="department.html">我们的部门</a>
+            </div>
+
+            <div>
+              <a href="join.html">加入我们</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

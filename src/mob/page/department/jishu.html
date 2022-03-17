@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>精弘首页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="mokuai.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="body" ref="pronbit">
+      <div class="mokuai-title">技术模块</div>
+      <div class="jishu">
+        <div class="kaifa">
+          <div class="title">开发部</div>
+          <div class="content-title">{{mokuai[1].content[0].title}}</div>
+          <div class="content-content">{{mokuai[1].content[0].content}}</div>
+        </div>
+        <div class="Separator"></div>
+        <div class="yunwei">
+          <div class="title">运维部</div>
+          <div class="content-title">{{mokuai[1].content[1].title}}</div>
+          <div class="content-content">{{mokuai[1].content[1].content}}</div>
+        </div>
+
+        <div
+          class="img1"
+          :style="{'background-image': 'url(../../photo/department/' + mokuai[1].img[0] + '.jpg)'}"
+        ></div>
+        <div class="content-title">{{mokuai[1].content[2].title}}</div>
+        <div class="content-content">{{mokuai[1].content[2].content}}</div>
+      </div>
+
+      <a href="../department.html"><div class="back"></div></a>
+
+      <div id="nav">
+        <div v-bind:class="top">
+          <div class="button-on" v-on:click="show"></div>
+          <img class="img" src="../../photo/top/logo.png" />
+        </div>
+        <div v-if="seen" v-bind:class="slideNav">
+          <div v-bind:class="top">
+            <div class="button-off" v-on:click="hide"></div>
+            <img class="img" src="../../photo/top/logo.png" />
+          </div>
+          <div class="nav-list">
+            <div>
+              <a href="../index.html">首页</a>
+            </div>
+            <div>
+              <a href="../story.html">我们的故事</a>
+            </div>
+            <div>
+              <a href="../product.html">我们的产品</a>
+            </div>
+            <div>
+              <a href="../department.html">我们的部门</a>
+            </div>
+
+            <div>
+              <a href="../join.html">加入我们</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">©2021 浙江工业大学-精弘网络</div>
+    <script src="mokuai.js"></script>
+  </body>
+</html>

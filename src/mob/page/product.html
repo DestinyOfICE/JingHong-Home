@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>精弘首页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="product.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="body" ref="pronbit">
+      <div class="title-style">我们的产品</div>
+      <div class="product">
+        <div
+          v-for="product,index in products"
+          class="product-list"
+          v-on:click="product_show(product.n)"
+        >
+          <div
+            class="product-img img"
+            v-bind:style="{'background-image': 'url(' + product.img + ')'}"
+          ></div>
+          <div class="product-title">{{product.title}}</div>
+          <div
+            v-if="index !==3"
+            style="width: 100%; height: 0.2rem; background-color: #efefef"
+          ></div>
+        </div>
+
+        <div v-if="seen_pro" class="product_detail">
+          <div class="detail">
+            <div class="mengban"></div>
+            <div
+              class="detail-img img"
+              v-bind:style="{'background-image': 'url(' + product_details[now].img + ')'}"
+            ></div>
+            <div class="detail-title">{{product_details[now].title}}</div>
+            <div class="detail-content">{{product_details[now].content}}</div>
+            <div class="product-button" v-on:click="product_hide"></div>
+          </div>
+        </div>
+      </div>
+
+      <a href="department.html"
+        ><div class="department">
+          <div class="department-button">
+            我们的部门<img src="../photo/svg/右箭头.svg" style="float: right;"/>
+          </div></div
+      ></a>
+
+      <div id="nav">
+        <div v-bind:class="top">
+          <div class="button-on" v-on:click="show" @touchmove.prevent></div>
+          <img class="img" src="../photo/top/logo.png" />
+        </div>
+        <div v-if="seen" v-bind:class="slideNav">
+          <div v-bind:class="top">
+            <div class="button-off" v-on:click="hide"></div>
+            <img class="img" src="../photo/top/logo.png" />
+          </div>
+          <div class="nav-list">
+            <div>
+              <a href="index.html">首页</a>
+            </div>
+            <div>
+              <a href="story.html">我们的故事</a>
+            </div>
+            <div>
+              <a href="product.html">我们的产品</a>
+            </div>
+            <div>
+              <a href="department.html">我们的部门</a>
+            </div>
+
+            <div>
+              <a href="join.html">加入我们</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">©2021 浙江工业大学-精弘网络</div>
+    <script src="product.js"></script>
+  </body>
+</html>
