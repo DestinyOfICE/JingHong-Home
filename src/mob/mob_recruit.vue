@@ -3,17 +3,18 @@
 
 import Des_label2 from './use/des_label2.vue';
 import { useRouter } from 'vue-router';
+import Nav_bar2 from './use/Nav_bar2.vue';
 
 const router = useRouter()
 
 function back() {
-    router.push("/")
+    router.push("/Mob_join")
 }
 </script>
 
 <template>
     <!-- 组件内容 -->
-
+    <Nav_bar2></Nav_bar2>
     <div style="margin-top: 80px;"></div>
     <div class="mob_label_1">报名表</div>
     <div style="width: 90%;margin: auto;">
@@ -91,5 +92,64 @@ function back() {
     grid-template-columns: 30% 60%;
     grid-template-rows: repeat(2, 30px);
     grid-gap: 10px 2.8%;
+}
+
+.mob_label_1 {
+    min-width: 90px;
+    width: fit-content;
+    height: 35px;
+    padding: 0 20px;
+    margin: 15px auto;
+    border-radius: 20px;
+
+    background-color: #d20001;
+
+    color: white;
+    font-size: 18px;
+    line-height: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: 0 5px 10px #999999; */
+}
+
+.mob_label_2 {
+    width: fit-content;
+    height: fit-content;
+    margin: 10px 0;
+    padding: 0 10px;
+    border-radius: 5px;
+
+    background-color: #d20001;
+
+    color: white;
+    font-size: 12px;
+    line-height: 30px;
+    text-align: left;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* box-shadow: 0 5px 10px #999999; */
+}
+.mob_button1{
+    width: 120px;
+    height: 30px;
+    /* padding: 0 20px; */
+    margin: 15px auto;
+    border-radius: 20px;
+
+    background-color: #d20001;
+
+    color: white;
+    font-size: 15px;
+    line-height: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: 0 5px 10px #999999; */
 }
 </style>
