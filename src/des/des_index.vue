@@ -7,7 +7,9 @@ import Des_label2 from './use/des_label2.vue';
 import { useRouter } from 'vue-router';
 import Start from '../mob/use/start.vue';
 import Footer from './use/footer.vue';
+import { inject } from 'vue';
 
+const isRouterAlive = inject('false')
 const router = useRouter()
 </script>
 
@@ -130,7 +132,7 @@ const router = useRouter()
     src: url("/font/SourceHanSansSC-VF.otf");
 }
 * {
-    text-align: center;
+    /* text-align: center; */
     /* border-radius: 1rem; */
     font-family: "SC-VF";
 }

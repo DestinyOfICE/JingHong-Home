@@ -4,6 +4,7 @@
 import Des_label2 from './use/des_label2.vue';
 import { useRouter } from 'vue-router';
 import Footer from './use/footer.vue';
+import Nav_bar2 from './use/Nav_bar2.vue';
 
 const router = useRouter()
 // router.push("/Mob_recruit")
@@ -17,6 +18,7 @@ function To_long() {
 </script>
 
 <template>
+<Nav_bar2></Nav_bar2>
     <div style="margin-top: 90px;"></div>
     <div class="mob_box">
         <Des_label2 content="加入我们"></Des_label2>

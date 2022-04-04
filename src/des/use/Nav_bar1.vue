@@ -92,16 +92,15 @@ a {
 }
 .tophide {
     position: sticky;
-    left: 0;
-    top: -16vh;
+    /* left: 0; */
+    left: auto;
+    top: 0rem;
     width: 100%;
-    min-width: 1000px;
-    height: 16vh;
-    /* background: white; */
+    min-width: 900px;
+    height: 96px;
     transition: top linear 0.3s;
     border-radius: 0;
     background-color: #d20001;
-
     z-index: 10;
 }
 img {

@@ -8,6 +8,7 @@ import Mob_recruit from "../mob/mob_recruit.vue"
 const routes= [
 
   { path: '/', component: Mob_join },
+  { path: '/Mob_join', component: Mob_join },
   { path: '/Mob_jishu_recruit', component: Mob_jishu_recruit },
   { path: '/Mob_long_recruit', component: Mob_long_recruit },
   { path: '/Mob_recruit', component: Mob_recruit },

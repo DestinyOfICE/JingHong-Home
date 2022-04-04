@@ -7,6 +7,9 @@ import { useRouter } from 'vue-router';
 import Footer from './use/footer.vue';
 
 const router = useRouter()
+function back() {
+    router.push("/Des_join")
+}
 
 let campus = ref(0);
 let choices = ref({
@@ -36,8 +39,7 @@ watch(choice2, (newValue, oldValue) => {
 <template>
     <!-- 组件内容 -->
     <Nav_bar1 page_now="4"></Nav_bar1>
-    <div style="margin-top: 10px;"></div>
-    <div class="des_label_1">报名表</div>
+    <div class="des_label1">报名表</div>
     <!-- <div class="box"> -->
     <div class="basic_info">
         <div class="item_name">姓名</div>
@@ -98,15 +100,15 @@ watch(choice2, (newValue, oldValue) => {
                 >{{ item }}</option>
             </select>
         </div>
-        <div class="des_label_2">来一段简单的自我介绍吧！</div>
+        <div class="des_label2">来一段简单的自我介绍吧！</div>
         <div class="capability_2" contenteditable="true"></div>
 
-        <div class="des_label_2">最后，有什么想对精弘网络说的话，可以在这里畅所欲言哦~</div>
+        <div class="des_label2">最后，有什么想对精弘网络说的话，可以在这里畅所欲言哦~</div>
         <div class="capability_2" contenteditable="true"></div>
     </div>
-    <div style="display:flex;">
-        <div class="button1">返回</div>
-        <div class="button1">提交</div>
+    <div style="display:flex;justify-content: space-evenly">
+        <div class="des_button1" @click="back">返回</div>
+        <div class="des_button1">提交</div>
     </div>
     <!-- </div> -->
     <Footer></Footer>
@@ -132,5 +134,62 @@ template {
 }
 .other_info option {
     width: 10px;
+}
+
+.des_label1 {
+    min-width: 120px;
+    width: fit-content;
+    height: 45px;
+    padding: 0 20px;
+    margin: 30px auto;
+    border-radius: 20px;
+
+    background-color: #d20001;
+
+    color: white;
+    font-size: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: 0 5px 10px #999999; */
+}
+.des_label2 {
+    width: fit-content;
+    height: fit-content;
+    margin: 10px 0;
+    padding: 0 10px;
+    border-radius: 5px;
+
+    background-color: #d20001;
+
+    color: white;
+    font-size: 12px;
+    line-height: 30px;
+    text-align: left;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* box-shadow: 0 5px 10px #999999; */
+}
+.des_button1 {
+    width: 150px;
+    height: 40px;
+    /* padding: 0 20px; */
+    margin: 15px auto;
+    border-radius: 20px;
+
+    background-color: #d20001;
+
+    color: white;
+    font-size: 18px;
+    line-height: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: 0 5px 10px #999999; */
 }
 </style>

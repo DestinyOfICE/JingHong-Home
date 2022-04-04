@@ -4,5 +4,5 @@ import App from './app.vue'
 // import App2 from './Des.vue'
 // import router1 from './router/mob'
 // import router2 from './router/des'
-import router from './router/index'
-createApp(App).use(router).mount('#app')
+// import router from './router/index'
+createApp(App).mount('#app')

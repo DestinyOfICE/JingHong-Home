@@ -8,6 +8,9 @@ import { useRouter } from 'vue-router';
 import Footer from './use/footer.vue';
 
 const router = useRouter()
+function back(){
+    router.push("/Des_long_recruit")
+}
 
 let campus = ref(0);
 </script>
@@ -15,8 +18,8 @@ let campus = ref(0);
 <template>
     <!-- 组件内容 -->
     <Nav_bar1 page_now="4"></Nav_bar1>
-    <div style="margin-top: 10px;"></div>
-    <div class="label_1">开发部长期招新</div>
+
+    <div class="des_label1">开发部长期招新</div>
     <!-- <div class="box"> -->
     <div class="basic_info">
         <div class="item_name">姓名</div>
@@ -61,15 +64,15 @@ let campus = ref(0);
                     <input type="checkbox" />能够使用git进行团队协作交互
                 </div>
             </div>
-            <div class="label_2">其他能力</div>
+            <div class="des_label2">其他能力</div>
             <div class="capability_2" contenteditable="true"></div>
         </div>
-        <div class="label_2">有什么想对开发部说的话，可以在这里告诉我们</div>
+        <div class="des_label2">有什么想对开发部说的话，可以在这里告诉我们</div>
         <div class="capability_2" contenteditable="true"></div>
     </div>
-    <div style="display:flex;">
-        <div class="button1">返回</div>
-        <div class="button1">提交</div>
+    <div style="display:flex;justify-content: space-evenly;">
+        <div class="des_button1" @click="back">返回</div>
+        <div class="des_button1">提交</div>
     </div>
     <!-- </div> -->
     <Footer></Footer>

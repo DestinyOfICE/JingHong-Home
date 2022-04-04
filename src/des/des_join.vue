@@ -6,6 +6,11 @@ import Des_label2 from './use/des_label2.vue';
 // import Test from '../components/test.vue';
 import { useRouter } from 'vue-router';
 import Footer from './use/footer.vue';
+import { inject } from 'vue';
+
+const isRouterAlive = inject('reload')
+
+
 
 const router = useRouter()
 function To_recruit() {
@@ -14,6 +19,7 @@ function To_recruit() {
 function To_long() {
     router.push("/Des_long_recruit")
 }
+
 </script>
 
 <template>

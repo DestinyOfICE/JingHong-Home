@@ -2,6 +2,7 @@
 
 import Des_label2 from './use/des_label2.vue';
 import { useRouter } from 'vue-router';
+import Nav_bar2 from './use/Nav_bar2.vue';
 
 const router = useRouter()
 function back() {
@@ -11,7 +12,7 @@ function back() {
 
 <template>
     <!-- 组件内容 -->
-
+    <Nav_bar2></Nav_bar2>
     <div style="margin-top: 80px;"></div>
     <div class="mob_label_1">开发部长期招新</div>
     <div style="width:90%;margin: auto;">
@@ -35,7 +36,7 @@ function back() {
             <div class="mob_item_name">学院</div>
             <div class="mob_item_content" contenteditable="true"></div>
             <div class="mob_item_name">校区</div>
-            <select class="mob_item_content" >
+            <select class="mob_item_content">
                 <option>朝晖</option>
                 <option>屏峰</option>
                 <option>莫干山</option>
@@ -128,7 +129,7 @@ function back() {
     background-color: white;
 }
 
-option{
+option {
     height: 20px;
 }
 
@@ -153,7 +154,6 @@ option{
     align-items: center;
     padding: 10px 30px;
     /* justify-content: center; */
-
 }
 .mob_capability_2 {
     width: 100%;
@@ -167,6 +167,4 @@ option{
     padding: 5px 5px;
     font-size: 12px;
 }
-
-
 </style>

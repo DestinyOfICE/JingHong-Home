@@ -10,7 +10,7 @@ function To_jishu() {
     router.push("/Mob_jishu_recruit")
 }
 function back() {
-    router.push("/")
+    router.push("/Mob_join")
 }
 </script>
 
